@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>工厂模式 | zjm&#39;s blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zjm404.github.io/favicon.ico?v=1607566017653">
+<link rel="stylesheet" href="https://zjm404.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="工厂方法模式
+静态/简单工厂
+类图
+## 代码
+AbstractProduct
+package cn.zjm404.stu.design.factory;
+
+public abstract class AbstractProduct {
+ ..." />
+    <meta name="keywords" content="设计模式,创建型" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zjm404.github.io">
+        <img src="https://zjm404.github.io/images/avatar.png?v=1607566017653" class="site-logo">
+        <h1 class="site-title">zjm&#39;s blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zjm404.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">工厂模式</h2>
+            <div class="post-date">2020-12-10</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="工厂方法模式">工厂方法模式</h1>
+<h1 id="静态简单工厂">静态/简单工厂</h1>
+<h2 id="类图">类图</h2>
+<p><img src="https://cdn.nlark.com/yuque/__puml/ab8dbbd68e9333eec362670e5ce16ec6.svg#lake_card_v2=eyJjb2RlIjoiYWJzdHJhY3QgY2xhc3MgQWJzdHJhY3RQcm9kdWN0e1xufVxuY2xhc3MgQ29uY3JldGVQcm9kdWN0MXtcbn1cbmNsYXNzIENvbmNyZXRlUHJvZHVjdDJ7XG59XG5jbGFzcyBGYWN0b3J5e1xuXHQrIEFic3RyYWN0UHJvZHVjdCBjcmVhdGUoU3Rpcm5nIHR5cGUpXG59XG5jbGFzcyBDbGllbnR7XG59XG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QxXG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QyXG5GYWN0b3J5IC4uPiBBYnN0cmFjdFByb2R1Y3RcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDFcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDJcbkNsaWVudCAuLj4gRmFjdG9yeSIsInR5cGUiOiJwdW1sIiwibWFyZ2luIjp0cnVlLCJpZCI6IlpMVktjIiwidXJsIjoiaHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlL19fcHVtbC9hYjhkYmJkNjhlOTMzM2VlYzM2MjY3MGU1Y2UxNmVjNi5zdmciLCJjYXJkIjoiZGlhZ3JhbSJ9" alt="" loading="lazy">## 代码</p>
+<h3 id="abstractproduct">AbstractProduct</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory;
+
+public abstract class AbstractProduct {
+    public void method1(){
+        System.out.println(&quot;这是一个工厂模式中的产品&quot;);
+    }
+    public abstract void method2();
+}
+
+</code></pre>
+<h3 id="concreteproduct1">ConcreteProduct1</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory;
+
+public class ConcreteProduct1 extends AbstractProduct{
+    @Override
+    public void method2() {
+        System.out.print(&quot;这是产品1&quot;);
+    }
+}
+
+</code></pre>
+<h3 id="concreteproduct2">ConcreteProduct2</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory;
+
+public class ConcreteProduct2 extends AbstractProduct{
+    @Override
+    public void method2() {
+        System.out.println(&quot;这是产品2&quot;);
+    }
+}
+
+</code></pre>
+<h3 id="factory">Factory</h3>
+<h4 id="方式一使用if语句判断">方式一使用if语句判断</h4>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory.simple;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+import cn.zjm404.stu.design.factory.ConcreteProduct2;
+
+public class Factory {
+    public static AbstractProduct create(String type){
+        if(type.equalsIgnoreCase(&quot;1&quot;)){
+            return new ConcreteProduct1();
+        }else if(type.equalsIgnoreCase(&quot;2&quot;)){
+            return new ConcreteProduct2();
+        }else{
+            return null;
+        }
+    }
+}
+
+</code></pre>
+<h4 id="方式二使用反射创建">方式二使用反射创建</h4>
+<pre><code class="language-java">    public static &lt;T extends AbstractProduct&gt; AbstractProduct createPlus(Class&lt;T&gt; clazz){
+        AbstractProduct ap = null;
+        try{
+            ap = (AbstractProduct) Class.forName(clazz.getName()).getConstructor().newInstance();
+        } catch (IllegalAccessException | ClassNotFoundException | NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        return ap;
+    }
+</code></pre>
+<h3 id="client">Client</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory;
+
+import cn.zjm404.stu.design.factory.simple.Factory;
+
+import java.util.Scanner;
+
+public class Client {
+    public static void main(String[] args) {
+        String str;
+        Scanner sc = new Scanner(System.in);
+        str = sc.nextLine();
+        AbstractProduct abstractProduct = Factory().create(str);
+        if (abstractProduct != null) {
+            abstractProduct.method2();
+        }
+        AbstractProduct ap = Factory.createPlus(ConcreteProduct1.class);
+        ap.method2();
+    }
+}
+
+</code></pre>
+<h2 id="优缺点">优缺点</h2>
+<p>可以很明显的看出<br>
+优点：高内聚，不暴露具体的产品类(使用反射除外）<br>
+确点：当有新产品出来时，需要去修改Factory类源码</p>
+<h1 id="工厂">工厂</h1>
+<h2 id="介绍">介绍</h2>
+<p>每个对象都有对应的一个工厂，不对Client暴露具体的产品类</p>
+<h2 id="类图-2">类图</h2>
+<p>关于依赖就只画有变量名的好了，例如：<br>
+在Client中<br>
+AbstractProduct ap = new ConcreteProduct1();<br>
+就只画<br>
+Client --&gt; AbstractProduct<br>
+而不是<br>
+Client --&gt; ConcreteProduct1<br>
+Client --&gt; AbstractProduct<br>
+<img src="https://cdn.nlark.com/yuque/__puml/dc90774f92c1ad5f6dd43ef77442d3c6.svg#lake_card_v2=eyJjb2RlIjoiYWJzdHJhY3QgY2xhc3MgQWJzdHJhY3RQcm9kdWN0e1xufVxuY2xhc3MgQ29uY3JldGVQcm9kdWN0MXtcbn1cbmNsYXNzIENvbmNyZXRlUHJvZHVjdDJ7XG59XG5hYnN0cmFjdCBjbGFzcyBBYnN0cmFjdEZhY3Rvcnl7XG5cdCsgYWJzdHJhY3QgPFQgZXh0ZW5kcyBQcm9kdWN0PiBUIGNyZWF0ZVByb2R1Y3QoQ2xhc3M8VD4gYyk7XG59XG5jbGFzcyBDb25jcmV0ZUZhY3Rvcnkxe1xufVxuY2xhc3MgQ29uY3JldGVGYWN0b3J5Mntcbn1cbmNsYXNzIENsaWVudHtcbn1cbkFic3RyYWN0UHJvZHVjdCA8fC0tIENvbmNyZXRlUHJvZHVjdDFcbkFic3RyYWN0UHJvZHVjdCA8fC0tIENvbmNyZXRlUHJvZHVjdDJcblxuQWJzdHJhY3RGYWN0b3J5IDx8LS0gQ29uY3JldGVGYWN0b3J5MVxuQWJzdHJhY3RGYWN0b3J5IDx8LS0gQ29uY3JldGVGYWN0b3J5MlxuQ29uY3JldGVQcm9kdWN0MSA8Li4gQ29uY3JldGVGYWN0b3J5MVxuQ29uY3JldGVQcm9kdWN0MiA8Li4gQ29uY3JldGVGYWN0b3J5MlxuQ2xpZW50IC4uPiBBYnN0cmFjdEZhY3RvcnlcbkNsaWVudCAuLj4gQWJzdHJhY3RQcm9kdWN0IiwidHlwZSI6InB1bWwiLCJtYXJnaW4iOnRydWUsImlkIjoiUXFaRXYiLCJ1cmwiOiJodHRwczovL2Nkbi5ubGFyay5jb20veXVxdWUvX19wdW1sL2RjOTA3NzRmOTJjMWFkNWY2ZGQ0M2VmNzc0NDJkM2M2LnN2ZyIsImNhcmQiOiJkaWFncmFtIn0=" alt="" loading="lazy">## 代码</p>
+<h3 id="abstractfactory">AbstractFactory</h3>
+<p>如果不需要有相同的方法，改为接口也可以</p>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+
+public abstract class AbstractFactory{
+    public abstract AbstractProduct create();
+}
+
+</code></pre>
+<h3 id="concretefactory1">ConcreteFactory1</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+
+public class ConcreteFactory1 extends AbstractFactory{
+
+    @Override
+    public AbstractProduct create() {
+        return new ConcreteProduct1();
+    }
+}
+
+</code></pre>
+<h3 id="concretefactory2">ConcreteFactory2</h3>
+<pre><code class="language-java">package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+
+public class ConcreteFactory1 extends AbstractFactory{
+
+    @Override
+    public AbstractProduct create() {
+        return new ConcreteProduct1();
+    }
+}
+
+</code></pre>
+<h1 id="抽象工厂">抽象工厂</h1>
+<h2 id="介绍-2">介绍</h2>
+<p>与工厂方法模式类似，不同的是工厂可以生产多个相关联的产品，或者说生产一组产品，其余一样。有多少组产品，就有多少对应的工厂</p>
+<pre><code class="language-java">package cn.zjm404.stu.dp.creat.factory.af;
+
+public abstract class AbstractFactoryType1 {
+    public abstract AbstractProductType1 creatProduct1();
+    public abstract AbstractProductType1 creatProduct2();
+}
+
+</code></pre>
+<h1 id="选择">选择</h1>
+<p>三种工厂模式，如何选择呢？</p>
+<ul>
+<li>当产品生产逻辑简单时，使用简单工厂模式
+<ul>
+<li>当产品逻辑较多时使用反射的形式创建</li>
+<li>较少时，使用if即可</li>
+</ul>
+</li>
+<li>当产品生产逻辑较复杂时
+<ul>
+<li>复杂且产品数量不多，工厂模式</li>
+<li>复杂且产品数量多并且产品间有共同点，抽象工厂模式</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://zjm404.github.io/tag/z1koZpAaz/" class="tag">
+                    设计模式
+                  </a>
+                
+                  <a href="https://zjm404.github.io/tag/HkQq_nfQUm/" class="tag">
+                    创建型
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '196a3cd01e2d58d0ab46',
+        clientSecret: 'da8b3883634aeb65126e822036f8107a604215a2',
+        repo: 'comments',
+        owner: 'zjm404',
+        admin: ['zjm404'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
