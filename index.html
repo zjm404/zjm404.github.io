@@ -1,145 +1,1067 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="温故而知新">
+<meta name="theme-color" content="#000">
 <title>zjm&#39;s blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1607664891778">
+<link rel="stylesheet" href="/media/css/gemini.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="/media/hljs/styles/atom-one-dark.css"
+  rel="stylesheet">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://zjm404.github.io/favicon.ico?v=1607579822769">
-<link rel="stylesheet" href="https://zjm404.github.io/styles/main.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="温故而知新">
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://zjm404.github.io">
-        <img src="https://zjm404.github.io/images/avatar.png?v=1607579822769" class="site-logo">
-        <h1 class="site-title">zjm&#39;s blog</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
       </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      温故而知新
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zjm404.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
+      <div class="site-meta">       
+        <div class="site-title">
           
-            <article class="post-item">
-              <div class="left">
-                <a href="https://zjm404.github.io/post/gong-han-mo-shi/">
-                  <h2 class="post-title">工厂模式</h2>
-                </a>
-                <div class="post-date">
-                  2020-12-10
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
+            <a href="/" class="brand">
+              <span>zjm&#39;s blog</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
               
-            </article>
+            
+            <li class="nav-item nav-item-active">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
           
-
-          <div class="pagination-container">
-  
-  
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
 </div>
 
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout gemini ">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">适用 Gemini,Pisces 布局,版权说明需配置</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://zjm404.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box gemini">
+          <section class="section  posts-expand slide-down-in">
+            
+  <article class="post-list-box  post box-shadow-wrapper">
+    <div class="article-wrapper bg-color">
+      <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://zjm404.github.io/post/gong-han-mo-shi/">
+      工厂模式
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-12-10 10:01:04">2020-12-10</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://zjm404.github.io/tag/z1koZpAaz/">
+        <span>设计模式</span>
+      </a>、
+      
+      
+      
+      <a href="https://zjm404.github.io/tag/HkQq_nfQUm/">
+        <span>创建型</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>697<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+      <div class="post-body">
+        
+        
+          
+            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
+            
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+              
+              
+              
+            
+            
+              <p><h1 id="工厂方法模式">工厂方法模式</h1>
+<h1 id="静态简单工厂">静态/简单工厂</h1>
+<h2 id="类图">类图</h2>
+<figure data-type="image" tabindex="1"><img src="https://cdn.nlark.com/yuque/__puml/ab8dbbd68e9333eec362670e5ce16ec6.svg#lake_card_v2=eyJjb2RlIjoiYWJzdHJhY3QgY2xhc3MgQWJzdHJhY3RQcm9kdWN0e1xufVxuY2xhc3MgQ29uY3JldGVQcm9kdWN0MXtcbn1cbmNsYXNzIENvbmNyZXRlUHJvZHVjdDJ7XG59XG5jbGFzcyBGYWN0b3J5e1xuXHQrIEFic3RyYWN0UHJvZHVjdCBjcmVhdGUoU3Rpcm5nIHR5cGUpXG59XG5jbGFzcyBDbGllbnR7XG59XG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QxXG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QyXG5GYWN0b3J5IC4uPiBBYnN0cmFjdFByb2R1Y3RcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDFcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDJcbkNsaWVudCAuLj4gRmFjdG9yeSIsInR5cGUiOiJwdW1sIiwibWFyZ2luIjp0cnVlLCJpZCI6IlpMVktjIiwidXJsIjoiaHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlL19fcHVtbC9hYjhkYmJkNjhlOTMzM2VlYzM2MjY3MGU1Y2UxNmVjNi5zdmciLCJjYXJkIjoiZGlhZ3JhbSJ9" alt="" loading="lazy"></figure>
+<h2 id="代码">代码</h2>
+
+                
+              <p>
+            
+          
+        
+        
+        <div class="post-button text-center">
+          <a class="btn language" data-lan="read-more" href="https://zjm404.github.io/post/gong-han-mo-shi/" rel="contents">
+            阅读全文 »
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </article>
+  
+            
+            
+<div class="page bg-color">
+  <ul class="pagination-ul">
+    
+    
+      
+        <li class="pagination-li pagination-active">
+            <a href="/page/../">
+              1
+            </a>
+        </li>
+      
+    
+    
+  </ul>
+</div>
+          </section>
         </div>
       </div>
     </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+  <div class="bg-img">
+    <img src="/media/images/言叶之庭.png" />
+  </div>
+  
+  
+  
+  
+</div>
+<script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
 
-AOS.init();
+  function scrollAnimation(currentY, targetY) {
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
 
 </script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
+<script>
+  let images = document.querySelectorAll('.section img');
+  console.log(images);
+  images.forEach(image => {
+    var parent = image.parentElement;
+    parent.removeChild(image);
+    var aelem = document.createElement('a');
+    aelem.href = image.src;
+    aelem.dataset['fancybox'] = '';
+    aelem.dataset['rel'] = 'fancybox-button';
+    aelem.classList.add('fancybox');
+    aelem.appendChild(image);
+    parent.appendChild(aelem);
+  })
+</script>
+  </div>
+</body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zjm404.github.io/post/gong-han-mo-shi/"" data-c="
+          &lt;h1 id=&#34;工厂方法模式&#34;&gt;工厂方法模式&lt;/h1&gt;
+&lt;h1 id=&#34;静态简单工厂&#34;&gt;静态/简单工厂&lt;/h1&gt;
+&lt;h2 id=&#34;类图&#34;&gt;类图&lt;/h2&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/__puml/ab8dbbd68e9333eec362670e5ce16ec6.svg#lake_card_v2=eyJjb2RlIjoiYWJzdHJhY3QgY2xhc3MgQWJzdHJhY3RQcm9kdWN0e1xufVxuY2xhc3MgQ29uY3JldGVQcm9kdWN0MXtcbn1cbmNsYXNzIENvbmNyZXRlUHJvZHVjdDJ7XG59XG5jbGFzcyBGYWN0b3J5e1xuXHQrIEFic3RyYWN0UHJvZHVjdCBjcmVhdGUoU3Rpcm5nIHR5cGUpXG59XG5jbGFzcyBDbGllbnR7XG59XG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QxXG5BYnN0cmFjdFByb2R1Y3QgPHwtLSBDb25jcmV0ZVByb2R1Y3QyXG5GYWN0b3J5IC4uPiBBYnN0cmFjdFByb2R1Y3RcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDFcbkZhY3RvcnkgLi4-IENvbmNyZXRlUHJvZHVjdDJcbkNsaWVudCAuLj4gRmFjdG9yeSIsInR5cGUiOiJwdW1sIiwibWFyZ2luIjp0cnVlLCJpZCI6IlpMVktjIiwidXJsIjoiaHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlL19fcHVtbC9hYjhkYmJkNjhlOTMzM2VlYzM2MjY3MGU1Y2UxNmVjNi5zdmciLCJjYXJkIjoiZGlhZ3JhbSJ9&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+&lt;h3 id=&#34;abstractproduct&#34;&gt;AbstractProduct&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory;
+
+public abstract class AbstractProduct {
+    public void method1(){
+        System.out.println(&amp;quot;这是一个工厂模式中的产品&amp;quot;);
+    }
+    public abstract void method2();
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concreteproduct1&#34;&gt;ConcreteProduct1&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory;
+
+public class ConcreteProduct1 extends AbstractProduct{
+    @Override
+    public void method2() {
+        System.out.print(&amp;quot;这是产品1&amp;quot;);
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concreteproduct2&#34;&gt;ConcreteProduct2&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory;
+
+public class ConcreteProduct2 extends AbstractProduct{
+    @Override
+    public void method2() {
+        System.out.println(&amp;quot;这是产品2&amp;quot;);
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;factory&#34;&gt;Factory&lt;/h3&gt;
+&lt;h4 id=&#34;方式一使用if语句判断&#34;&gt;方式一使用if语句判断&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory.simple;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+import cn.zjm404.stu.design.factory.ConcreteProduct2;
+
+public class Factory {
+    public static AbstractProduct create(String type){
+        if(type.equalsIgnoreCase(&amp;quot;1&amp;quot;)){
+            return new ConcreteProduct1();
+        }else if(type.equalsIgnoreCase(&amp;quot;2&amp;quot;)){
+            return new ConcreteProduct2();
+        }else{
+            return null;
+        }
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;方式二使用反射创建&#34;&gt;方式二使用反射创建&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;    public static &amp;lt;T extends AbstractProduct&amp;gt; AbstractProduct createPlus(Class&amp;lt;T&amp;gt; clazz){
+        AbstractProduct ap = null;
+        try{
+            ap = (AbstractProduct) Class.forName(clazz.getName()).getConstructor().newInstance();
+        } catch (IllegalAccessException | ClassNotFoundException | NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        return ap;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;client&#34;&gt;Client&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory;
+
+import cn.zjm404.stu.design.factory.simple.Factory;
+
+import java.util.Scanner;
+
+public class Client {
+    public static void main(String[] args) {
+        String str;
+        Scanner sc = new Scanner(System.in);
+        str = sc.nextLine();
+        AbstractProduct abstractProduct = Factory().create(str);
+        if (abstractProduct != null) {
+            abstractProduct.method2();
+        }
+        AbstractProduct ap = Factory.createPlus(ConcreteProduct1.class);
+        ap.method2();
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;优缺点&#34;&gt;优缺点&lt;/h2&gt;
+&lt;p&gt;可以很明显的看出&lt;br&gt;
+优点：高内聚，不暴露具体的产品类(使用反射除外）&lt;br&gt;
+确点：当有新产品出来时，需要去修改Factory类源码&lt;/p&gt;
+&lt;h1 id=&#34;工厂&#34;&gt;工厂&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;每个对象都有对应的一个工厂，不对Client暴露具体的产品类&lt;/p&gt;
+&lt;h2 id=&#34;类图-2&#34;&gt;类图&lt;/h2&gt;
+&lt;p&gt;关于依赖就只画有变量名的好了，例如：&lt;br&gt;
+在Client中&lt;br&gt;
+AbstractProduct ap = new ConcreteProduct1();&lt;br&gt;
+就只画&lt;br&gt;
+Client --&amp;gt; AbstractProduct&lt;br&gt;
+而不是&lt;br&gt;
+Client --&amp;gt; ConcreteProduct1&lt;br&gt;
+Client --&amp;gt; AbstractProduct&lt;br&gt;
+&lt;img src=&#34;https://cdn.nlark.com/yuque/__puml/dc90774f92c1ad5f6dd43ef77442d3c6.svg#lake_card_v2=eyJjb2RlIjoiYWJzdHJhY3QgY2xhc3MgQWJzdHJhY3RQcm9kdWN0e1xufVxuY2xhc3MgQ29uY3JldGVQcm9kdWN0MXtcbn1cbmNsYXNzIENvbmNyZXRlUHJvZHVjdDJ7XG59XG5hYnN0cmFjdCBjbGFzcyBBYnN0cmFjdEZhY3Rvcnl7XG5cdCsgYWJzdHJhY3QgPFQgZXh0ZW5kcyBQcm9kdWN0PiBUIGNyZWF0ZVByb2R1Y3QoQ2xhc3M8VD4gYyk7XG59XG5jbGFzcyBDb25jcmV0ZUZhY3Rvcnkxe1xufVxuY2xhc3MgQ29uY3JldGVGYWN0b3J5Mntcbn1cbmNsYXNzIENsaWVudHtcbn1cbkFic3RyYWN0UHJvZHVjdCA8fC0tIENvbmNyZXRlUHJvZHVjdDFcbkFic3RyYWN0UHJvZHVjdCA8fC0tIENvbmNyZXRlUHJvZHVjdDJcblxuQWJzdHJhY3RGYWN0b3J5IDx8LS0gQ29uY3JldGVGYWN0b3J5MVxuQWJzdHJhY3RGYWN0b3J5IDx8LS0gQ29uY3JldGVGYWN0b3J5MlxuQ29uY3JldGVQcm9kdWN0MSA8Li4gQ29uY3JldGVGYWN0b3J5MVxuQ29uY3JldGVQcm9kdWN0MiA8Li4gQ29uY3JldGVGYWN0b3J5MlxuQ2xpZW50IC4uPiBBYnN0cmFjdEZhY3RvcnlcbkNsaWVudCAuLj4gQWJzdHJhY3RQcm9kdWN0IiwidHlwZSI6InB1bWwiLCJtYXJnaW4iOnRydWUsImlkIjoiUXFaRXYiLCJ1cmwiOiJodHRwczovL2Nkbi5ubGFyay5jb20veXVxdWUvX19wdW1sL2RjOTA3NzRmOTJjMWFkNWY2ZGQ0M2VmNzc0NDJkM2M2LnN2ZyIsImNhcmQiOiJkaWFncmFtIn0=&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;## 代码&lt;/p&gt;
+&lt;h3 id=&#34;abstractfactory&#34;&gt;AbstractFactory&lt;/h3&gt;
+&lt;p&gt;如果不需要有相同的方法，改为接口也可以&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+
+public abstract class AbstractFactory{
+    public abstract AbstractProduct create();
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concretefactory1&#34;&gt;ConcreteFactory1&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+
+public class ConcreteFactory1 extends AbstractFactory{
+
+    @Override
+    public AbstractProduct create() {
+        return new ConcreteProduct1();
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concretefactory2&#34;&gt;ConcreteFactory2&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.design.factory.factory;
+
+import cn.zjm404.stu.design.factory.AbstractProduct;
+import cn.zjm404.stu.design.factory.ConcreteProduct1;
+
+public class ConcreteFactory1 extends AbstractFactory{
+
+    @Override
+    public AbstractProduct create() {
+        return new ConcreteProduct1();
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;抽象工厂&#34;&gt;抽象工厂&lt;/h1&gt;
+&lt;h2 id=&#34;介绍-2&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;与工厂方法模式类似，不同的是工厂可以生产多个相关联的产品，或者说生产一组产品，其余一样。有多少组产品，就有多少对应的工厂&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package cn.zjm404.stu.dp.creat.factory.af;
+
+public abstract class AbstractFactoryType1 {
+    public abstract AbstractProductType1 creatProduct1();
+    public abstract AbstractProductType1 creatProduct2();
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;选择&#34;&gt;选择&lt;/h1&gt;
+&lt;p&gt;三种工厂模式，如何选择呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当产品生产逻辑简单时，使用简单工厂模式
+&lt;ul&gt;
+&lt;li&gt;当产品逻辑较多时使用反射的形式创建&lt;/li&gt;
+&lt;li&gt;较少时，使用if即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;当产品生产逻辑较复杂时
+&lt;ul&gt;
+&lt;li&gt;复杂且产品数量不多，工厂模式&lt;/li&gt;
+&lt;li&gt;复杂且产品数量多并且产品间有共同点，抽象工厂模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">工厂模式</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
 
 
 
 
 
-  </body>
+
 </html>
